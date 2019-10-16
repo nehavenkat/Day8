@@ -39,32 +39,56 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
         }
 
         .List_item {
-            border:black;
+            border: black;
             font-style: Bold;
             font-size: 25px;
         }
-        button{
 
+        button {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
         }
     </style>
 
-<body class = "D_Background">
+<body class="D_Background">
     <h1>Welcome to your personal Task List!</h1>
     <br />
     ​
-    <span class ="List-item">You can add any task you like by writing it in the specified field and then press "Add new
+    <span class="List-item">You can add any task you like by writing it in the specified field and then press "Add new
         task"</span><br /><br />
     ​
     <input type="text" id="newTask">
     <input type="button" value="Add new Task" onclick="addNewTask()">
+
     ​
     <!-- EXERCISE 3
         Create a button "Remove Last Task" to trigger the method "removeLast"
         -->
+    <button class="button">Remove Last Task</button>
+
+    var removeLastTask = document.q
+    function removeLast(){
+
+    }
+
+
 
     <!-- EXERCISE 5
         Create a button "Remove First Task" to trigger the method "removeFirst"
         -->
+
+    <button class="button">Remove Last Task</button>
+
+    function removefirst(){
+
+    }
 
     <ul id="myTaskList">
     </ul>
@@ -76,33 +100,49 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
     ​
     <hr />
     ​
-    <input type="button" value="Sort" onclick="bubblesort()" />
+    <input type="button" value="Sort" onclick="bubblesort(event)" />
     ​
     <script>
-        function addNewTask() {
-            /* EXERCISE 4: 
-                Add a new task to the list.
-                Suggestion:
-                - Use document.getElementById to get the UL item and the input text
-                - Use the document.createElement to create the new List Item
-                - Append the child to the UL
-            */
+        /* EXERCISE 4: 
+                 Add a new task to the list.
+                 Suggestion:
+                 - Use document.getElementById to get the UL item and the input text
+                 - Use the document.createElement to create the new List Item
+                 - Append the child to the UL
+             */
+        function addNewTask(event) {
+            var getUlItem = document.getElementById("colorPicker");
+            var myTaskListValue = myTaskList.Value;
+
+            var myListColour = document.createElement("li");
+            myListColor.colorlist.add = ("color");
+            myListColor.innertext = myTaskListValue;
+            var colorList = document.queryselector("#myTaskList");
+            colorList.appendchild(myListColor);
         }
 
         /* EXERCISE 4:
             Create a method "removeLast" which removes the last item from the task list
         */
 
+        var numbersList = values.ToList();
+        var last = numbersList.Last();
+        numbersList.Remove(last);
+        values = numbersList.ToArray();
+        return last
+
         /* EXERCISE 6:
            Create a method "removeFirst" which removes the first item from the task list
        */
 
         /* EXERCISE 7:
-           Create a method "getTasksAsArray" which returns (and print to the console) an array containing the tasks as string
+           Create a method "getTasksAsArray" which returns (and print to the console)
+            an array containing the tasks as string
         */
 
         /* EXERCISE 8:
-           Create a method "changeTaskBackgroundColor" which takes the color from the color picker ad apply it as background to every list item
+           Create a method "changeTaskBackgroundColor" which takes the color from the color picker ad
+           apply it as background to every list item
         */
 
         /* EXERCISE 9:
