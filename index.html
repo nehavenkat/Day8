@@ -1,44 +1,21 @@
 <!DOCTYPE html>
-
-<!--
-ASSIGNMENT RULES
-- The solution must be pushed to the repository and be available for the tutors by the end of the day
-- You can ask for tutor's help
-- You can google / use StackOverflow BUT we suggest you to use just the material provided
-- To test the page, just open it with your default browser.
-​
-ASSIGNMENT TOPIC
-You are building a task list site.
-The have a list of tasks and can, at any time, add a new one, delete one or sort the
- whole bunch of them
--->
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
     <!-- EXERCISE 1:
-    Specify the title, the charset (UTF-8) and the viewport of the page. -->
-
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-    </head>
-    ​<style>
-        /* EXERCISE 2:  
-       Create a CSS class for the task list with a diverse background
-       Create a CSS class for the task list item with a border, a bold text 
-       and a bigger font size
-       Style every button of the page to be bigger
-    */
-        .​D_Background {
-
+    Specify the title, the charset (UTF-8) and the viewport of the page.
+    -->
+    <style>
+        .​bg {
             background-color: aqua;
         }
 
-        .List_item {
+        .le {
             border: black;
             font-style: Bold;
             font-size: 25px;
@@ -46,49 +23,39 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 
         button {
             display: block;
-            width: 100%;
-            border: none;
+            width: 25%;
+            border:blue;
             background-color: #4CAF50;
             color: white;
-            padding: 14px 28px;
+            padding: 2px 2px;
             font-size: 16px;
             cursor: pointer;
             text-align: center;
         }
-    </style>
 
-<body class="D_Background">
+        ​
+        /* EXERCISE 2:  
+       Create a CSS class for the task list with a diverse background
+       Create a CSS class for the task list item with a border, a bold text and a bigger font size
+       Style every button of the page to be bigger
+    */
+    </style>
+    ​
+</head>
+
+<body class ="bg">
+    
     <h1>Welcome to your personal Task List!</h1>
     <br />
     ​
-    <span class="List-item">You can add any task you like by writing it in the specified field and then press "Add new
+    <span class="le">You can add any task you like by writing it in the specified field and then press "Add new
         task"</span><br /><br />
     ​
     <input type="text" id="newTask">
     <input type="button" value="Add new Task" onclick="addNewTask()">
+    <button type = "button">removeLast</button>
 
-    ​
-    <!-- EXERCISE 3
-        Create a button "Remove Last Task" to trigger the method "removeLast"
-        -->
-    <button class="button">Remove Last Task</button>
-
-    var removeLastTask = document.q
-    function removeLast(){
-
-    }
-
-
-
-    <!-- EXERCISE 5
-        Create a button "Remove First Task" to trigger the method "removeFirst"
-        -->
-
-    <button class="button">Remove Last Task</button>
-
-    function removefirst(){
-
-    }
+    <button type = "button">removeFirst</button>
 
     <ul id="myTaskList">
     </ul>
@@ -100,9 +67,23 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
     ​
     <hr />
     ​
-    <input type="button" value="Sort" onclick="bubblesort(event)" />
+    <input type="button" value="Sort" onclick="bubblesort()" />
+
     ​
     <script>
+        function addNewTask() {
+
+            var myTaskInput = document.querySelector("#newtask");
+            var myTaskInputValue = myTaskInput.Value;
+
+            var li = document.creatElement("li");
+            li.innertext = myTaskValue;
+
+            var myTaskList = document.querySelector("myTaskList");
+            myTaskList.appendcild(li);
+        }
+
+
         /* EXERCISE 4: 
                  Add a new task to the list.
                  Suggestion:
@@ -110,7 +91,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
                  - Use the document.createElement to create the new List Item
                  - Append the child to the UL
              */
-        function addNewTask(event) {
+        /*function addNewTask(event) {
             var getUlItem = document.getElementById("colorPicker");
             var myTaskListValue = myTaskList.Value;
 
@@ -119,21 +100,35 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
             myListColor.innertext = myTaskListValue;
             var colorList = document.queryselector("#myTaskList");
             colorList.appendchild(myListColor);
-        }
+            myTasklist.value= "";*/
+
+
+
 
         /* EXERCISE 4:
             Create a method "removeLast" which removes the last item from the task list
         */
 
-        var numbersList = values.ToList();
-        var last = numbersList.Last();
-        numbersList.Remove(last);
-        values = numbersList.ToArray();
-        return last
+        //var numbersList = values.ToList();
+        // var last = numbersList.Last();
+        // numbersList.Remove(last);
+        // values = numbersList.ToArray();
+
+        function removeLast() {
+            var myTaskList = document.querySelector("myTaskList");
+            myTaskList.removeChild(myTaskList.Lastchild);
+        }
+
 
         /* EXERCISE 6:
            Create a method "removeFirst" which removes the first item from the task list
        */
+        function removeFirst() {
+            var myTaskList = document.querySelector("#myTaskllist");
+            myTaskList.removeFirst(myTaskList.firstchild)
+
+        }
+
 
         /* EXERCISE 7:
            Create a method "getTasksAsArray" which returns (and print to the console)
